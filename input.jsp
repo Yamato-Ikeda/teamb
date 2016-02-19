@@ -2,7 +2,7 @@
 	contentType="text/html;charset=Windows-31J" %>
 
 <html>
-<head><title>ユーザー登録</title></head>
+<head><title>登録</title></head>
 <body>
 	<h1>ユーザー登録</h1>
 	<form method='post' action='registtest'>
