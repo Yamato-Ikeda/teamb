@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                      http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+  version="3.0"
+  metadata-complete="true">
+  
+
+  	<servlet>
+  		<servlet-name>bbstest</servlet-name>
+  		<servlet-class>ConWriteServlet</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+  		<servlet-name>bbstest</servlet-name>
+  		<url-pattern>/writecontents</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+  		<servlet-name>readtest</servlet-name>
+  		<servlet-class>ConReadServlet</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+  		<servlet-name>readtest</servlet-name>
+  		<url-pattern>/showthread</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+  		<servlet-name>readresult</servlet-name>
+  		<jsp-file>/contents.jsp</jsp-file>
+  	</servlet>
+  	<servlet-mapping>
+  		<servlet-name>readresult</servlet-name>
+  		<url-pattern>/readresult</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+  		<servlet-name>threadnew</servlet-name>
+  		<jsp-file>/thread.jsp</jsp-file>
+  	</servlet>
+  	<servlet-mapping>
+  		<servlet-name>threadnew</servlet-name>
+  		<url-pattern>/threadnew</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+  		<servlet-name>readthread</servlet-name>
+  		<servlet-class>ThReadServlet</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+  		<servlet-name>readthread</servlet-name>
+  		<url-pattern>/selectthread</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+  		<servlet-name>writethread</servlet-name>
+  		<servlet-class>ThWriteServlet</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+  		<servlet-name>writethread</servlet-name>
+  		<url-pattern>/newthread</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+  		<servlet-name>threadresult</servlet-name>
+  		<jsp-file>/threadresult.jsp</jsp-file>
+  	</servlet>
+  	<servlet-mapping>
+  		<servlet-name>threadresult</servlet-name>
+  		<url-pattern>/threadresult</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+  		<servlet-name>ThDelete</servlet-name>
+  		<servlet-class>ThDeleteServlet</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+  		<servlet-name>ThDelete</servlet-name>
+  		<url-pattern>/threaddelet</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+  		<servlet-name>threaddele</servlet-name>
+  		<jsp-file>/adminthread.jsp</jsp-file>
+  	</servlet>
+  	<servlet-mapping>
+  		<servlet-name>threaddele</servlet-name>
+  		<url-pattern>/threaddelete</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+  		<servlet-name>admin</servlet-name>
+  		<servlet-class>AdminServlet</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+  		<servlet-name>admin</servlet-name>
+  		<url-pattern>/loginresult</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+  		<servlet-name>threadA</servlet-name>
+  		<jsp-file>/AdminTh.jsp</jsp-file>
+  	</servlet>
+  	<servlet-mapping>
+  		<servlet-name>threadA</servlet-name>
+  		<url-pattern>/threadAdmin</url-pattern>
+  	</servlet-mapping>
+  	<servlet>
+  		<servlet-name>tds</servlet-name>
+  		<servlet-class>ThDeleteServlet</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+  		<servlet-name>tds</servlet-name>
+  		<url-pattern>/ThDeleteSer</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+  		<servlet-name>cds</servlet-name>
+  		<servlet-class>AdminConReadServlet</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+  		<servlet-name>cds</servlet-name>
+  		<url-pattern>/showadminthread</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+  		<servlet-name>condele</servlet-name>
+  		<jsp-file>/condelete.jsp</jsp-file>
+  	</servlet>
+  	<servlet-mapping>
+  		<servlet-name>condele</servlet-name>
+  		<url-pattern>/condele</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+  		<servlet-name>condelete</servlet-name>
+  		<servlet-class>ConDeleteServlet</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+  		<servlet-name>condelete</servlet-name>
+  		<url-pattern>/condelete</url-pattern>
+  	</servlet-mapping>
+</web-app>
