@@ -11,7 +11,7 @@ public class ContentBean{
 	private String date;
 	
 	
-	//セッター
+	//セッタ
 	
 	
 	public void setPost_number(int post_number){
