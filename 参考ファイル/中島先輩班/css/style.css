@@ -1,0 +1,12 @@
+@charset= "Windows-31J";
+*{
+  font-family: "ƒqƒ‰ƒMƒmŠpƒS Pro W3","ƒƒCƒŠƒI",sans-serif;
+}
+body{
+	background-image:url(../img/beijing1.png);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+#name{
+  color: #20cc20;
+}
