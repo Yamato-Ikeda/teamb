@@ -13,8 +13,16 @@ public class ContentBean{
 	public void setPost_number(int post_number){
 		this.post_number = post_number;
 	}
+	public void setUser_name(String user_name){
+		this.user_name = user_name;
+	}
 	public void setEmail_address(String email_address){
 		this.email_address = email_address;
 	}
-	//‚Â‚­‚è‚©‚¯
+	public void setMessage(String message){
+		this.message = message;
+	}
+	public void setDelete_key(String Delete_key){
+		
+	}
 }
