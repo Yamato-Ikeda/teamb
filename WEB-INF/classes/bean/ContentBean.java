@@ -9,7 +9,7 @@ public class ContentBean{
 	private boolean delete_flag;
 	private String image;
 	private String date;
-	
+		
 	//せったー
 	//セッタ
 		
