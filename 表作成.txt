@@ -1,0 +1,10 @@
+CREATE TABLE Contents (
+  post_number   NUMBER(5)    PRIMARY KEY,
+  user_name     VARCHAR2(50),
+  email_address VARCHAR2(100),
+  message       VARCHAR2(1000) NOT NULL,
+  delete_key    VARCHAR2(10),
+  delete_flag   BIT          DEFAULT 0,
+  image         VARCHAR2(100),
+  post_date          DATETIME
+);
