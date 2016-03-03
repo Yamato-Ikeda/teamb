@@ -25,15 +25,7 @@ public class ContentBean{
 	public void setMessage(String message){
 		this.message = message;
 	}
-	public void setDelete_key(String Delete_key){
-		
-	}
-	public void setUser_name(String user_name){
-		this.user_name = user_name;
-	}
-	public void setMessage(String message){
-		this.message = message;
-	}
+	
 	public void setDelete_key(String delete_key){
 		this.delete_key = delete_key;
 	}
@@ -49,29 +41,29 @@ public class ContentBean{
 	
 	//‚°‚Á‚½[
 	
-	public Integer getPost_number{
+	public Integer getPost_number(){
 		return post_number;
 	}
-	public String getUser_name{
+	public String getUser_name(){
 		return user_name;
 	}
-	public String getEmail_address{
+	public String getEmail_address(){
 		return email_address;
 	}
 	
-	public String getMessage{
+	public String getMessage(){
 		return message;
 	}
-	public String getDelete_key{
+	public String getDelete_key(){
 		return delete_key;
 	}
-	public boolean getDelete_flag{
+	public boolean getDelete_flag(){
 		return delete_flag;
 	}
-	public String getImage{
+	public String getImage(){
 		return image;
 	}
-	public String getDate{
+	public String getDate(){
 		return date;
 	}
 	
