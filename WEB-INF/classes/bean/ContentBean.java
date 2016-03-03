@@ -9,8 +9,7 @@ public class ContentBean{
 	private boolean delete_flag;
 	private String image;
 	private String date;
-	
-	
+		
 	//せったー
 	//セッタ
 		
@@ -23,21 +22,18 @@ public class ContentBean{
 	public void setEmail_address(String email_address){
 		this.email_address = email_address;
 	}
-<<<<<<< HEAD
 	public void setMessage(String message){
 		this.message = message;
 	}
 	public void setDelete_key(String Delete_key){
 		
 	}
-=======
 	public void setUser_name(String user_name){
 		this.user_name = user_name;
 	}
 	public void setMessage(String message){
 		this.message = message;
 	}
-	
 	public void setDelete_key(String delete_key){
 		this.delete_key = delete_key;
 	}
@@ -50,8 +46,6 @@ public class ContentBean{
 	public void setDate(String date){
 		this.date = date;
 	}
-	
-	
 	
 	//げったー
 	
@@ -81,7 +75,4 @@ public class ContentBean{
 		return date;
 	}
 	
-	
-	
->>>>>>> refs/heads/pr/4
 }
