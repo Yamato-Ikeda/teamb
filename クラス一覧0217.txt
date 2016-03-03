@@ -17,9 +17,24 @@ ReadExecuterをnewして、executeメソッド
 それをjspに渡す
 （表示はjspに任せる）
 
+WriteExecuter
+
+
+WrightServlet
+送信された値（書き込み内容）を
+ContentBean型のインスタンスにして、
+WriteExecuterにそれを渡す。
+その後、表示更新のために
+ReadServletと同様のことを行う。
+
 Executer（抽象）
 ３つの*Executerクラスのスーパークラス。
 
 Accessor
 データベースへの接続の開始＆終了を行う。
 
+
+以下JSPファイルの仕様
+
+index.jsp
+書き込みボタンでWriteServletを呼び出す
