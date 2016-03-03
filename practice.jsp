@@ -4,7 +4,7 @@
 <html>
 <head>
 <link rel="stylesheet" href="css/index.css">
-<title>ŒfŽ¦”Â</title>
+<title>ŒfŽ¦”Â—ûK</title>
 </head>
 <body>
 	<h1>ŒfŽ¦”Â—ûK</h1>
