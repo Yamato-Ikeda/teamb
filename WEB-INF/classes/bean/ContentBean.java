@@ -9,9 +9,12 @@ public class ContentBean{
 	private boolean delete_flag;
 	private String image;
 	private String date;
+<<<<<<< HEAD
 
 	//つくりかけ
 
+=======
+>>>>>>> afcd33f5724d43ee2edcbd91f2cce999e271d234
 		
 	//せったー
 	//セッタ
@@ -28,7 +31,6 @@ public class ContentBean{
 	public void setMessage(String message){
 		this.message = message;
 	}
-	
 	public void setDelete_key(String delete_key){
 		this.delete_key = delete_key;
 	}
@@ -53,7 +55,6 @@ public class ContentBean{
 	public String getEmail_address(){
 		return email_address;
 	}
-	
 	public String getMessage(){
 		return message;
 	}
@@ -70,5 +71,8 @@ public class ContentBean{
 		return date;
 	}
 	
+<<<<<<< HEAD
 
+=======
+>>>>>>> afcd33f5724d43ee2edcbd91f2cce999e271d234
 }
