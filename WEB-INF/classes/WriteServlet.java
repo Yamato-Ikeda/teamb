@@ -29,33 +29,43 @@ public class WriteServlet extends HttpServlet{
 		String image = req.getParameter("image");
  
 		
-		if(name.length()==0){
-			name="名無し";
+		if(user_name.length()==0){
+			user_name="名無し";
 		}
 		
 		//バイト数を超えていないかのチェック-----------
-		boolean isError = CheckBytes.check(name,text);
+		/*boolean isError = CheckBytes.check(name,text);
 		if(isError){
 			res.sendRedirect("/testbb/conbyteserror.html");
 			return;
 		}
 		//-------------------------------------------
+		*/
 		
-		
-		CB.setThreadNo(threadNo);
-		CB.setContentNo(contentNo);
-		CB.setName(name);
-		CB.setText(text);
+		CB.setUser_name(user_name);
+		CB.setEmail_address(email_address);
+		CB.setMessage(message);
+		CB.setDelete_key(delete_key);
+		CB.setImage(image);
 		
 		We.execute(CB);
 		
+		int postNo = null;
+		ArrayList al = (ArrayList) RE.execute(postNo);
+		
+		//CheckReplace cr = new CheckReplace();
+		//tb = cr.check(tb);
+		
+		req.setAttribute("tb",tb);
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/index.jsp");
+		
 		//書き込んだスレッドを表示----------------------------------------------------
-		ReadExecuter RE=new ReadExecuter();
+		/*ReadExecuter RE=new ReadExecuter();
 		ThreadBean tb = (ThreadBean) RE.execute(threadNo);
 		
 		req.setAttribute("tb",tb);
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/contents.jsp");
-		dispatcher.forward(req,res);
+		dispatcher.forward(req,res);*/
 		//-----------------------------------------------------------------------------
 		
 	}
