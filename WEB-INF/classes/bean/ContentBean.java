@@ -9,6 +9,12 @@ public class ContentBean{
 	private boolean delete_flag;
 	private String image;
 	private String date;
+<<<<<<< HEAD
+
+	//Ç¬Ç≠ÇËÇ©ÇØ
+
+=======
+>>>>>>> afcd33f5724d43ee2edcbd91f2cce999e271d234
 		
 	
 	//ÇπÇ¡ÇΩÅ[
@@ -66,4 +72,8 @@ public class ContentBean{
 		return date;
 	}
 	
+<<<<<<< HEAD
+
+=======
+>>>>>>> afcd33f5724d43ee2edcbd91f2cce999e271d234
 }
