@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-public class ConReadServlet extends HttpServlet{
+public class ReadServlet extends HttpServlet{
 	ReadExecuter RE=new ReadExecuter();
 	
 	
@@ -31,7 +31,7 @@ public class ConReadServlet extends HttpServlet{
 		//CheckReplace cr = new CheckReplace();
 		//tb = cr.check(tb);
 		
-		req.setAttribute("tb",tb);
+		req.setAttribute("al",al);
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/index.jsp");
 		dispatcher.forward(req,res);
 		
