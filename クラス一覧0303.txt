@@ -10,6 +10,8 @@ ReadExecuter~ReadServlet~jspファイル間の
 実行し、結果を
 「ContentBeanが入ったArrayList」に
 加工してReadServletにreturnで返す。
+引数-1の場合は全コメントを返し、
+整数の場合はその数から１０件を返す。
 
 ・ReadServlet
 ReadExecuterをnewして、executeメソッド
