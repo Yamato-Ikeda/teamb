@@ -25,12 +25,11 @@ public class ReadExecuter extends Executer{
 			ResultSet rs = accessor.read(sql);
 			
 			while(rs.next()){
-				
 				//コレクションに格納する1コメントごとのオブジェクト
 				ContentBean tb = new ContentBean();
 				
-				tb.setPost_number(rs.getInt("post_number"));
-				System.out.println(rs.getInt("post_number"));
+				tb.setPost_number(rs.getInt(1));
+				System.out.println(rs.getInt(1));
 				/*String title = rs.getString(2);
 					title = CheckReplace.check(title);
 					tb.setTitle(title);*/
@@ -38,12 +37,14 @@ public class ReadExecuter extends Executer{
 				System.out.println(rs.getString("User_name"));
 				tb.setEmail_address(rs.getString("Email_address"));
 				System.out.println(rs.getString("Email_address"));
-				tb.setMessage(rs.getString("Message"));
-				System.out.println(rs.getInt("Message"));
+				tb.setMessage(rs.getString(4));
+				System.out.println(rs.getString(4));
 				tb.setDelete_flag(rs.getBoolean("Delete_flag"));
 				System.out.println(rs.getBoolean("Delete_flag"));
 				tb.setImage(rs.getString("Image"));
 				System.out.println(rs.getString("Image"));
+				tb.setImage(rs.getString("Post_date"));
+				System.out.println(rs.getString("Post_date"));
 				
 				//コレクションに1スレッドごとのオブジェクトを格納
 				al.add(tb);
@@ -52,6 +53,7 @@ public class ReadExecuter extends Executer{
 		
 		}catch(SQLException e){
 			System.out.println("えぐぜ：SQLException");
+			System.out.println(e.getErrorCode());
 		}
 		//DBから切断
 		accessor.close();
