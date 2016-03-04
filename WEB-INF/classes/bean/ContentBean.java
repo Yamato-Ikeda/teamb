@@ -10,6 +10,7 @@ public class ContentBean{
 	private String image;
 	private String date;
 		
+	
 	//せったー
 	//セッタ
 		
