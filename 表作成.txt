@@ -8,3 +8,10 @@ CREATE TABLE Contents (
   image         VARCHAR2(100),
   post_date     DATE
 );
+
+INSERT INTO Contents(post_number,user_name,email_address,message,delete_key,delete_flag,image,post_date) 
+VALUES(postno.NEXTVAL,'YAMATO','test@gmail.com','本文です','yamato',0,'test.jpg',SYSDATE);
+
+contents表の作成
+postno順序作成
+ReadServlet,ReadExecuter,Accessorをコンパイルする
