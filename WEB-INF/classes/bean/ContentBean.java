@@ -16,6 +16,7 @@ public class ContentBean{
 =======
 >>>>>>> afcd33f5724d43ee2edcbd91f2cce999e271d234
 		
+	
 	//せったー
 	//セッタ
 		
