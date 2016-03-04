@@ -9,13 +9,6 @@ public class ContentBean{
 	private boolean delete_flag;
 	private String image;
 	private String date;
-	
-	public void setPost_number(int post_number){
-		this.post_number = post_number;
-	}
-	public void setEmail_address(String email_address){
-		this.email_address = email_address;
-	}
 		
 	//せったー
 	//セッタ
@@ -32,7 +25,6 @@ public class ContentBean{
 	public void setMessage(String message){
 		this.message = message;
 	}
-	
 	public void setDelete_key(String delete_key){
 		this.delete_key = delete_key;
 	}
