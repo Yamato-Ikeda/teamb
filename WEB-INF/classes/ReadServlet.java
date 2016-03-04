@@ -2,7 +2,7 @@ import executer.*;
 
 import bean.*;
 
-
+import java.util.ArrayList;
 
 import java.io.IOException;
 
@@ -25,14 +25,14 @@ public class ReadServlet extends HttpServlet{
 		//int threadNo = Integer.parseInt( req.getParameter("thread") );
 		
 		//ContentsBean CB =new ContentsBean();
-		int postNo = null;
+		int postNo = -1;
 		ArrayList al = (ArrayList) RE.execute(postNo);
 		
 		//CheckReplace cr = new CheckReplace();
 		//tb = cr.check(tb);
 		
 		req.setAttribute("al",al);
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/index.jsp");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/practice.jsp");
 		dispatcher.forward(req,res);
 		
 	}
