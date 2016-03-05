@@ -1,6 +1,7 @@
 <%@ page pageEncoding="Windows-31J"
-	import="java.util.*,bean.*"
 	contentType="text/html;charset=Windows-31J" %>
+
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
 <head>
@@ -10,9 +11,7 @@
 <body>
 	<h1>åfé¶î¬ó˚èK</h1>
 	
-	<%
-		ArrayList conList = (ArrayList)request.getAttribute("al");
-	%>
+
 	
 <table border="0" cellpadding="0" cellspacing="0">
 	<form id="postForm" enctype="multipart/form-data" action="http://0bbs.jp/attention_javascript.php" method="post" onsubmit="return validateForm();">
@@ -92,13 +91,13 @@
 	</tbody>
 </table>
 	
-	<c:forEach var="cb" items="${conList}">
-		<c:out value="${cb.post_number}"/>:
-		<c:out value="${cb.user_name}" />
-		<c:out value="${cb.date}"/><br>
+	<hr>
+	<c:forEach var="cb" items="${al}">
+		<c:out value="${cb.post_number}"/>
+		<c:out value="${cb.user_name}"/><br>
 		<pre><c:out value="${cb.message}"/></pre> <br>
 	</c:forEach>
-	
+	<hr>
 	
 </body>
 </html>

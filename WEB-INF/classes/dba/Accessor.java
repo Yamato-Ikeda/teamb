@@ -40,11 +40,15 @@ public class Accessor{
 			//PreparedStatement st = Connect.prepareStatement(sql);
 			Statement st = Connect.createStatement(/*ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY*/);
 			
+			System.out.println(sql);
+			
 			ResultSet rs = st.executeQuery(sql);
 			return rs;
 		}
 		catch(SQLException e){
 			System.out.println("class:Accessor_method:read() SQLException");
+			e.printStackTrace();
+			//System.out.println(e.getErrorCode());
 		}
 		catch(Exception e){
 			System.out.println("class:Accessor_method:read() Exception");
