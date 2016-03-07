@@ -35,6 +35,7 @@ public class DeleteServlet extends HttpServlet{
 		
 		//ContentsBean CB =new ContentsBean();
 		//int postNo = -1;
+		
 		boolean b = (boolean) DE.execute(db);
 		
 		//CheckReplace cr = new CheckReplace();
