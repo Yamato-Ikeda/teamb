@@ -70,7 +70,7 @@
 							<td valign="middle">
 								<font color="red">※</font>メッセージ(タグ使用不可)
 								<br>
-								<textarea name="message" cols="60" rows="6"></textarea>
+								<textarea required name="message" cols="60" rows="6"></textarea>
 							</td>
 						</tr>
 					</tbody>
