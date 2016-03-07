@@ -22,6 +22,9 @@ public class DeleteServlet extends HttpServlet{
 		
 		String p = req.getParameter("post_number");
 		String d = req.getParameter("delete_key");
+		if(d.length()==0){
+			d=" ";
+		}
 		
 		DeleteBean db = new DeleteBean();
 		

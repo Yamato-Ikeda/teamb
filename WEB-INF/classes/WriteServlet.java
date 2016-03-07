@@ -34,6 +34,9 @@ public class WriteServlet extends HttpServlet{
 		if(user_name.length()==0){
 			user_name="名無し";
 		}
+		if(delete_key.length()==0){
+			delete_key=" ";
+		}
 		System.out.println(user_name+"さんの投稿");
 		//バイト数を超えていないかのチェック-----------
 		/*boolean isError = CheckBytes.check(name,text);
