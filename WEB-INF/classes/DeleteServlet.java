@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 
 
 public class DeleteServlet extends HttpServlet{
-	ReadExecuter RE=new ReadExecuter();
+	DeleteExecuter DE=new DeleteExecuter();
 	
 	
 	public void doGet(HttpServletRequest req,HttpServletResponse res)
@@ -22,22 +22,38 @@ public class DeleteServlet extends HttpServlet{
 		req.setCharacterEncoding("Windows-31J");
 		
 		
-		req.getParameter()
+		String p = req.getParameter(post_number);
+		String d = req.getParameter(delete_key);
+		
+		DeleteBean db = new DeleteBean();
+		
+		
+		db.setPost_number(p);
+		db.setDelete_key(d);
 
 		//int threadNo = Integer.parseInt( req.getParameter("thread") );
 		
 		//ContentsBean CB =new ContentsBean();
-		int postNo = -1;
-		ArrayList al = (ArrayList) RE.execute(postNo);
+		//int postNo = -1;
+		boolean b = (boolean) DE.execute(db);
 		
 		//CheckReplace cr = new CheckReplace();
 		//tb = cr.check(tb);
+		String result;
 		
-		ContentBean tester = (ContentBean)al.get(1);
-		System.out.println(tester.getUser_name());
+		if(b){
+			result="ê¨å˜ÇµÇ‹ÇµÇΩÅB";
+			
+		}else{
+			result="é∏îsÇµÇ‹ÇµÇΩÅB";
+		}
+			System.out.println(result);
 		
-		req.setAttribute("al",al);
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/Delete.jsp");
+		//ContentBean tester = (ContentBean)al.get(1);
+		//System.out.println(tester.getUser_name());
+		
+		req.setAttribute("result",result);
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/delete.jsp");
 		dispatcher.forward(req,res);
 		
 	}
