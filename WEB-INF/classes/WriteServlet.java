@@ -1,6 +1,8 @@
 import executer.*;
 import bean.*;
-import check.*;
+//import check.*;
+
+import java.util.ArrayList;
 
 import java.io.IOException;
 
@@ -12,13 +14,13 @@ import javax.servlet.http.HttpServletResponse;
 
 
 public class WriteServlet extends HttpServlet{
-	
+	ReadExecuter RE=new ReadExecuter();
 	WriteExecuter We=new WriteExecuter();
 	
 	public void doPost(HttpServletRequest req,HttpServletResponse res)
 	throws IOException,ServletException{		
 		req.setCharacterEncoding("Windows-31J");
-		
+		System.out.println("投稿");
 		ContentBean CB=new ContentBean();
 		
 
@@ -32,7 +34,7 @@ public class WriteServlet extends HttpServlet{
 		if(user_name.length()==0){
 			user_name="名無し";
 		}
-		
+		System.out.println(user_name+"さんの投稿");
 		//バイト数を超えていないかのチェック-----------
 		/*boolean isError = CheckBytes.check(name,text);
 		if(isError){
@@ -50,14 +52,15 @@ public class WriteServlet extends HttpServlet{
 		
 		We.execute(CB);
 		
-		int postNo = null;
+		int postNo = -1;
 		ArrayList al = (ArrayList) RE.execute(postNo);
 		
 		//CheckReplace cr = new CheckReplace();
 		//tb = cr.check(tb);
 		
-		req.setAttribute("tb",tb);
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/index.jsp");
+		req.setAttribute("al",al);
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/practice.jsp");
+		dispatcher.forward(req,res);
 		
 		//書き込んだスレッドを表示----------------------------------------------------
 		/*ReadExecuter RE=new ReadExecuter();
