@@ -14,9 +14,11 @@
 
 	
 <table border="0" cellpadding="0" cellspacing="0">
-	<form id="postForm" enctype="multipart/form-data" action="http://0bbs.jp/attention_javascript.php" method="post" onsubmit="return validateForm();">
-	</form>
+	
 	<tbody>
+	
+		<form action="writecontents" method="Post">
+		
 		<tr>
 			<td valign="top">
 				<input type="hidden" name="MAX_FILE_SIZE" value="1048576">
@@ -27,21 +29,21 @@
 						<tr>
 							<td align="right" nowrap="">
 								<font color="red">※</font>名前
-								<input name="n" size="18" value=""> 
+								<input name="user_name" size="18" value=""> 
 							</td>
 							<td align="left" nowrap="">
 								Email 
-								<input name="m" size="22" value="" style="ime-mode:disabled">
+								<input name="email_address" size="22" value="" style="ime-mode:disabled">
 							</td>
 						</tr>
 						<tr>
 							<td align="right" nowrap="">
 								削除用パスワード
-								<input name="p" value="" style="ime-mode:disabled">
+								<input name="delete_key" value="" style="ime-mode:disabled">
 							</td>
 							<td align="left" nowrap="">
 								画像
-								<!--<input type="file" size="41" name="im" value="">-->準備中
+								<!--<input type="file" size="41" name="image" value="">-->準備中
 							</td>
 						</tr>
 						<tr>
@@ -68,7 +70,7 @@
 							<td valign="middle">
 								<font color="red">※</font>メッセージ(タグ使用不可)
 								<br>
-								<textarea name="b" cols="60" rows="6"></textarea>
+								<textarea name="message" cols="60" rows="6"></textarea>
 							</td>
 						</tr>
 					</tbody>
@@ -88,7 +90,11 @@
 				</table>
 			</td>
 		</tr>
+		
+		</form>
+		
 	</tbody>
+	
 </table>
 	
 	<hr>

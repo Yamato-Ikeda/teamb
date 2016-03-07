@@ -14,7 +14,7 @@ public class WriteExecuter extends Executer{
 	
 	public Object execute(Object bean){
 		accessor.connect();
-		
+		System.out.println("らいと");
 		ContentBean cb = (ContentBean)bean;
 		
 		//シングルクォート置換
@@ -24,7 +24,7 @@ public class WriteExecuter extends Executer{
 		//sql = sql.concat("1, 0, '"+cb.getName()+"', SYSDATE, '"+cb.getText()+"' )");
 		
 		//Contents表に投稿をインサート。CON_NO（コンテンツの通し番号）はそのスレッドのコンテンツ数+1を格納。
-		sql = sql.concat("postno.nextval,"+cb.getUser_name()+","+cb.getEmail_address()+","+cb.getMessage()+","+cb.getDelete_key()+","+cb.getDelete_flag()+","+cb.getImage()+", SYSDATE, )");
+		sql = sql.concat("postno.nextval,'"+cb.getUser_name()+"','"+cb.getEmail_address()+"','"+cb.getMessage()+"','"+cb.getDelete_key()+"',0,'"+cb.getImage()+"',SYSDATE)");
 		accessor.write(sql);
 
 		//Thread表のTH_CON_COUNT（そのスレッドのコンテンツ数）を+1してアップデート。
