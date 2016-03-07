@@ -24,4 +24,14 @@ http://java.sun.com/xml/ns/javaee/web-app_2_4.xsd"
 		<url-pattern>/index</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>write</servlet-name>
+		<servlet-class>WriteServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>write</servlet-name>
+		<url-pattern>/writecontents</url-pattern>
+	</servlet-mapping>
+	
+	
 </web-app>
