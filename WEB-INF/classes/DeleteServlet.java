@@ -28,7 +28,10 @@ public class DeleteServlet extends HttpServlet{
 		
 		DeleteBean db = new DeleteBean();
 		
+		try{
+		
 		db.setPost_number(Integer.parseInt(p));
+				}catch(NumberFormatException e){db.setPost_number(0);}
 		db.setDelete_key(d);
 
 		//int threadNo = Integer.parseInt( req.getParameter("thread") );
