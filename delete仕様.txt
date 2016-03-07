@@ -4,11 +4,16 @@
 
 SQLに問い合わせる					DeleteExecuter
 入力された「投稿番号」の行の「削除キー」を受け取る　	DeleteExecuter
+SELECT delete_key FROM Contents
+WHERE post_number = D
 
 フォームからの入力と問い合わせ結果のキーを確認する	DeleteExecuter
 
 同じなら
 その「投稿番号」の「削除フラグ」を立てる		DeleteExecuter
+UPDATE 表名
+SET	列名 = 値,列名 = 値
+WHERE	条件
 
 その後
 削除に（成功した/失敗した）メッセージを表示		DeleteServlet

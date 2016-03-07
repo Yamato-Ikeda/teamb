@@ -105,5 +105,7 @@
 	</c:forEach>
 	<hr>
 	
+	<div align="right"><a href="delete.jsp" /></div>
+	
 </body>
 </html>
