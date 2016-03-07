@@ -16,19 +16,16 @@ import javax.servlet.http.HttpServletResponse;
 public class DeleteServlet extends HttpServlet{
 	DeleteExecuter DE=new DeleteExecuter();
 	
-	
-	public void doGet(HttpServletRequest req,HttpServletResponse res)
+	public void doPost(HttpServletRequest req,HttpServletResponse res)
 	throws IOException,ServletException{		
 		req.setCharacterEncoding("Windows-31J");
 		
-		
-		String p = req.getParameter(post_number);
-		String d = req.getParameter(delete_key);
+		String p = req.getParameter("post_number");
+		String d = req.getParameter("delete_key");
 		
 		DeleteBean db = new DeleteBean();
 		
-		
-		db.setPost_number(p);
+		db.setPost_number(Integer.parseInt(p));
 		db.setDelete_key(d);
 
 		//int threadNo = Integer.parseInt( req.getParameter("thread") );
@@ -36,7 +33,7 @@ public class DeleteServlet extends HttpServlet{
 		//ContentsBean CB =new ContentsBean();
 		//int postNo = -1;
 		
-		boolean b = (boolean) DE.execute(db);
+		Boolean b = (Boolean) DE.execute(db);
 		
 		//CheckReplace cr = new CheckReplace();
 		//tb = cr.check(tb);

@@ -97,15 +97,16 @@
 	
 </table>
 	
+	<div align="right"><a href="delete">ƒRƒƒ“ƒg‚Ìíœ</a></div>
+	
 	<hr>
 	<c:forEach var="cb" items="${al}">
-		<c:out value="${cb.post_number}"/>
-		<c:out value="${cb.user_name}"/><br>
-		<pre><c:out value="${cb.message}"/></pre> <br>
+		<c:if test="${!cb.delete_flag}" >
+			<c:out value="${cb.post_number}"/>
+			<c:out value="${cb.user_name}"/><br>
+			<pre><c:out value="${cb.message}"/></pre><br>
+		</c:if>
 	</c:forEach>
 	<hr>
-	
-	<div align="right"><a href="delete.jsp" /></div>
-	
 </body>
 </html>

@@ -1,6 +1,6 @@
-package Bean;
+package bean;
 
-class DeleteBean{
+public class DeleteBean{
 	private Integer post_number;
 	private String delete_key;
 
