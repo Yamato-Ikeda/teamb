@@ -33,5 +33,22 @@ http://java.sun.com/xml/ns/javaee/web-app_2_4.xsd"
 		<url-pattern>/writecontents</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>deleteform</servlet-name>
+		<jsp-file>/delete.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>deleteform</servlet-name>
+		<url-pattern>/delete</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>deleteresult</servlet-name>
+		<servlet-class>DeleteServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>deleteresult</servlet-name>
+		<url-pattern>/deleteresult</url-pattern>
+	</servlet-mapping>
 	
 </web-app>
