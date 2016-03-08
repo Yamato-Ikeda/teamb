@@ -17,7 +17,7 @@
 	
 	<tbody>
 	
-		<form action="writecontents" method="Post"><!--  enctype="multipart/form-data" -->
+		<form action="writecontents" method="Post" enctype="multipart/form-data"><!--  enctype="multipart/form-data" -->
 		
 		<tr>
 			<td valign="top">
@@ -43,7 +43,7 @@
 							</td>
 							<td align="left" nowrap="">
 								<p>
-									‰æ‘œ@<input type="file" name="image" size="50" enctype="multipart/form-data">
+									‰æ‘œ@<input type="file" name="image" size="50">
 								</p>
 							</td>
 						</tr>
