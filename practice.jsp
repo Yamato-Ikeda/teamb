@@ -17,7 +17,7 @@
 	
 	<tbody>
 	
-		<form action="writecontents" method="Post"enctype="multipart/form-data">
+		<form action="writecontents" method="Post"><!--enctype="multipart/form-data"-->
 			
 		</form>
 		<tr>
@@ -46,7 +46,7 @@
 								
 								<!--<input type="file" size="41" name="image" value=""
 								enctype="multipart/form-data">-->
-								<p>ファイル：<input type="file" name="upfile" size="50"></p>
+								
 
 								
 							</td>
