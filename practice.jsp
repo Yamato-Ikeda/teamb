@@ -17,8 +17,9 @@
 	
 	<tbody>
 	
-		<form action="writecontents" method="Post">
-		
+		<form action="writecontents" method="Post"enctype="multipart/form-data">
+			
+		</form>
 		<tr>
 			<td valign="top">
 				<input type="hidden" name="MAX_FILE_SIZE" value="1048576">
@@ -42,8 +43,12 @@
 								<input name="delete_key" value="" style="ime-mode:disabled">
 							</td>
 							<td align="left" nowrap="">
-								画像
-								<!--<input type="file" size="41" name="image" value="">-->準備中
+								
+								<!--<input type="file" size="41" name="image" value=""
+								enctype="multipart/form-data">-->
+								<p>ファイル：<input type="file" name="upfile" size="50"></p>
+
+								
 							</td>
 						</tr>
 						<tr>
