@@ -43,7 +43,7 @@ public class ReadExecuter extends Executer{
 				System.out.println(rs.getBoolean("Delete_flag"));
 				tb.setImage(rs.getString("Image"));
 				System.out.println(rs.getString("Image"));
-				tb.setImage(rs.getString("Post_date"));
+				tb.setDate(rs.getString("Post_date"));
 				System.out.println(rs.getString("Post_date"));
 				
 				//コレクションに1スレッドごとのオブジェクトを格納
