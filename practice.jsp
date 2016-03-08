@@ -17,9 +17,8 @@
 	
 	<tbody>
 	
-		<form action="writecontents" method="Post"><!--enctype="multipart/form-data"-->
-			
-		</form>
+		<form action="writecontents" method="Post"><!--  enctype="multipart/form-data" -->
+		
 		<tr>
 			<td valign="top">
 				<input type="hidden" name="MAX_FILE_SIZE" value="1048576">
@@ -43,12 +42,9 @@
 								<input name="delete_key" value="" style="ime-mode:disabled">
 							</td>
 							<td align="left" nowrap="">
-								
-								<!--<input type="file" size="41" name="image" value=""
-								enctype="multipart/form-data">-->
-								
-
-								
+								<p>
+									âÊëúÅ@<input type="file" name="image" size="50" enctype="multipart/form-data">
+								</p>
 							</td>
 						</tr>
 						<tr>
