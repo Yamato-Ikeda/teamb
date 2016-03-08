@@ -61,13 +61,13 @@ public class WriteServlet extends HttpServlet{
 		CB.setDelete_key(delete_key);
 		CB.setImage(image);
 		
+		CheckReplace cr = new CheckReplace();
+		CB = cr.check(CB);
+		
 		We.execute(CB);
 		
 		int postNo = -1;
 		ArrayList al = (ArrayList) RE.execute(postNo);
-		
-		CheckReplace cr = new CheckReplace();
-		CB = cr.check(CB);
 		
 		req.setAttribute("al",al);
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/practice.jsp");
