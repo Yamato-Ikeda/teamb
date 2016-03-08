@@ -9,11 +9,9 @@ public class ContentBean{
 	private boolean delete_flag;
 	private String image;
 	private String date;
-		
 	
-	//せったー
-	//セッタ
-		
+	//せったー 
+	
 	public void setPost_number(int post_number){
 		this.post_number = post_number;
 	}

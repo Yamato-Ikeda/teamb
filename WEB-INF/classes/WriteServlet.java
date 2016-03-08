@@ -5,13 +5,13 @@ import bean.*;
 import java.util.ArrayList;
 
 import java.io.IOException;
-
+import java.io.File;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import javax.servlet.http.Part;
 
 public class WriteServlet extends HttpServlet{
 	ReadExecuter RE=new ReadExecuter();
