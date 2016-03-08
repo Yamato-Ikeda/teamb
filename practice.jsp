@@ -44,7 +44,7 @@
 							</td>
 							<td align="left" nowrap="">
 								
-								<!--<input type="file" size="41" name="image" value=""
+								<!-- <input type="file" size="41" name="image" value=""
 								enctype="multipart/form-data">-->
 								<p>ファイル：<input type="file" name="upfile" size="50"></p>
 
