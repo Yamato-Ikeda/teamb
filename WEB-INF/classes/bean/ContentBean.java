@@ -9,6 +9,20 @@ public class ContentBean{
 	private boolean delete_flag;
 	private String image;
 	private String date;
+<<<<<<< HEAD
+=======
+
+	
+	public void setPost_number(int post_number){
+		this.post_number = post_number;
+	}
+	public void setEmail_address(String email_address){
+		this.email_address = email_address;
+	}
+	//‚Â‚­‚è‚©‚¯
+
+		
+>>>>>>> origin/master
 	
 	//‚¹‚Á‚½[
 	
@@ -24,6 +38,7 @@ public class ContentBean{
 	public void setMessage(String message){
 		this.message = message;
 	}
+	
 	public void setDelete_key(String delete_key){
 		this.delete_key = delete_key;
 	}
@@ -48,6 +63,7 @@ public class ContentBean{
 	public String getEmail_address(){
 		return email_address;
 	}
+	
 	public String getMessage(){
 		return message;
 	}
@@ -64,4 +80,5 @@ public class ContentBean{
 		return date;
 	}
 	
+
 }
