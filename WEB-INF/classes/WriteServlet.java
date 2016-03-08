@@ -1,6 +1,6 @@
 import executer.*;
 import bean.*;
-//import check.*;
+import check.*;
 
 import java.util.ArrayList;
 
@@ -29,8 +29,16 @@ public class WriteServlet extends HttpServlet{
 		String message = req.getParameter("message");
 		String delete_key = req.getParameter("delete_key");
 		String image = req.getParameter("image");
- 
+
+		Part part = req.getPart("image");
 		
+		long size = 0;
+		
+		try{
+			size = part.getSize();
+		}catch(NullPointerException e){System.out.println("‚Ê‚é‚Û");}
+		System.out.println(size+"byte");
+
 		if(user_name.length()==0){
 			user_name="–¼–³‚µ";
 		}
@@ -58,8 +66,8 @@ public class WriteServlet extends HttpServlet{
 		int postNo = -1;
 		ArrayList al = (ArrayList) RE.execute(postNo);
 		
-		//CheckReplace cr = new CheckReplace();
-		//tb = cr.check(tb);
+		CheckReplace cr = new CheckReplace();
+		CB = cr.check(CB);
 		
 		req.setAttribute("al",al);
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/practice.jsp");
