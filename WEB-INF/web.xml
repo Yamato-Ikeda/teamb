@@ -51,4 +51,12 @@ http://java.sun.com/xml/ns/javaee/web-app_2_4.xsd"
 		<url-pattern>/deleteresult</url-pattern>
 	</servlet-mapping>
 	
+	<multipart-config>
+		<max-file-size>5242880</max-file-size>
+		<max-request-size>27262976</max-request-size>
+		<file-size-threshold>32768</file-size-threshold>
+		<!-- ディレクトリパスを指定することも出来る (しなくても良い) <location>/tmp</location> -->
+	</multipart-config>
+	
+	
 </web-app>
