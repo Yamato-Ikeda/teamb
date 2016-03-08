@@ -29,7 +29,7 @@ public class WriteServlet extends HttpServlet{
 		String message = req.getParameter("message");
 		String delete_key = req.getParameter("delete_key");
 		String image = req.getParameter("image");
-
+			System.out.println(user_name);//test
 		Part part = req.getPart("image");
 		
 		long size = 0;
