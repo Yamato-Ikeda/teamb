@@ -28,15 +28,41 @@ public class WriteServlet extends HttpServlet{
 		String email_address = req.getParameter("email_address");
 		String message = req.getParameter("message");
 		String delete_key = req.getParameter("delete_key");
-		String image = req.getParameter("image");
-			System.out.println(user_name);//test
 		Part part = req.getPart("image");
+		
+		String contentDisposition = part.getHeader("content-disposition");
+		String contentType = part.getHeader("content-type");
 		
 		long size = 0;
 		
 		try{
 			size = part.getSize();
-		}catch(NullPointerException e){System.out.println("ぬるぽ");}
+			// uploadフォルダの絶対パスを調べる
+		String path = getServletContext().getRealPath("upload");
+
+		/* アップロードしたファイル名の取得 */
+		// 変数contentDispositionから"filename="以降を抜き出す
+		int filenamePosition = contentDisposition.indexOf("filename=");
+		String filename = contentDisposition.substring(filenamePosition);
+		// "filename="と"を除く
+		filename = filename.replace("filename=", "");
+		filename = filename.replace("\"", "");
+		// 絶対パスからファイル名のみ取り出す
+		filename = new File(filename).getName();
+
+		boolean isJpegFile = false;
+		// JPEG形式のチェック
+		if ((contentType.equals("image/jpeg"))
+				|| (contentType.equals("image/pjpeg"))) {
+			// 画像ファイルをpath+filenameとして保存
+			part.write(path + "/" + filename);
+			isJpegFile = true;
+			
+			// サムネール画像の作成
+			createThumbnail(path + "/" + filename, path + "/small/" + filename, 120);
+		}
+
+		}catch(NullPointerException e){System.out.println("画像なし");}
 		System.out.println(size+"byte");
 
 		if(user_name.length()==0){
