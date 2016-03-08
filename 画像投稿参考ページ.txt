@@ -1,7 +1,8 @@
-参考ページ１
+参考ページ１：
+ファイルアップロード、サムネイルなどの全体の処理の方法。
 http://uriku.hatenablog.com/entry/2014/06/15/174438
-a
 
-２：以下のページを参考に、
-jspに画像送信フォームを追加してください
+参考ページ２：
+以下のページを参考に、
+jspに画像送信フォームを追加しました。
 http://www.tagindex.com/html_tag/form/form_enctype.html
