@@ -11,9 +11,14 @@
 <body>
 	<h1>掲示板練習</h1>
 	
-	<%! int pageNo=1;
-	
-	 %>
+	<%
+	int pageNo = 1;
+	String SPageNo = request.getParameter("thread");
+	if(SPageNo != null){
+		pageNo = Integer.parseInt(SPageNo);
+	}
+	request.setAttribute("PNO",pageNo);
+	%>
 	
 <table border="0" cellpadding="0" cellspacing="0">
 	
@@ -99,7 +104,10 @@
 	</tbody>
 	
 </table>
-	<a href ="index?thread=<%=pageNo%>" onclick="<%pageNo++;%>">次のページへ</a>
+	<c:if test="${PNO > 1}" >
+		<a href ="index?thread=<%=pageNo-1%>">前のページへ</a>
+	</c:if>
+	<a href ="index?thread=<%=pageNo+1%>">次のページへ</a>
 	<div align="right"><a href="delete">コメントの削除</a></div>
 	
 	<hr>
@@ -115,5 +123,9 @@
 		</c:if>
 	</c:forEach>
 	<hr>
+	<c:if test="${PNO > 1}" >
+		<a href ="index?thread=<%=pageNo-1%>">前のページへ</a>
+	</c:if>
+	<a href ="index?thread=<%=pageNo+1%>">次のページへ</a>
 </body>
 </html>
