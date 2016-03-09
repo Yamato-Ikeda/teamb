@@ -35,7 +35,7 @@
 					<tbody>
 						<tr>
 							<td align="right" nowrap="">
-								<font color="red">Å¶</font>ñºëO
+								ñºëO
 								<input name="user_name" size="18" value=""> 
 							</td>
 							<td align="left" nowrap="">
@@ -118,7 +118,7 @@
 			<c:out value="${cb.date}"/><br>
 			<pre><c:out value="${cb.message}"/></pre><br>
 			<c:if test="${!empty cb.image && cb.image != 'null'}" >
-				<img src="images/small/${cb.image}" alt="âÊëú" title="ìäçeÇ≥ÇÍÇΩâÊëú"><br><br>
+			<a href="images/${cb.image}" target="_blank"><img src="images/small/${cb.image}" alt="âÊëú" title="ìäçeÇ≥ÇÍÇΩâÊëú"></a><br><br>
 			</c:if>
 		</c:if>
 	</c:forEach>
