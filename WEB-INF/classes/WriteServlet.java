@@ -106,7 +106,7 @@ public class WriteServlet extends HttpServlet{
 		We.execute(CB);
 		
 		//書き込んだスレッドを表示----------------------------------------------------
-		int postNo = -1;
+		int postNo = 1;
 		ArrayList al = (ArrayList) RE.execute(postNo);
 		
 		req.setAttribute("al",al);
