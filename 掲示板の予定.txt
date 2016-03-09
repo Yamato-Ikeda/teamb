@@ -1,26 +1,11 @@
 ○画像をサムネイル表示にする
 ○PNGなどの形式に対応する
 ○１０件ずつ表示するようにする
+○画像をクリックすると原寸大を表示する
 ・管理者用のオプションを作る（全てのコメントの確認と削除と復活）
-→画像をクリックすると原寸大を表示する
 
-参考ページ１：
-ファイルアップロード、サムネイルなどの全体の処理の方法。
-http://uriku.hatenablog.com/entry/2014/06/15/174438
-
-参考ページ２：
-以下のページを参考に、
-jspに画像送信フォームを追加しました。
-http://www.tagindex.com/html_tag/form/form_enctype.html
-
-参考ページ３：
-海外サイト　大塚さんより
-http://www.javaroots.com/2013/09/how-to-create-thumbnail-images-in-java.html
-
-参考ページ４：
-マルチパートデータでの通信を可能にする方法（web.xmlへの記述など）
-http://moznion.hatenadiary.com/entry/2015/03/05/233142
-
-参考ページ５：
-jstlのリファレンス。
-http://struts.wasureppoi.com/jstl/00_jstl.html
+・文字数制限をjspで実装
+・コメント表示をテーブルにして整形する
+　（テーブルの横幅上限を設定する方法を調べる）
+・画像が上書きされないようにする
+・コメント数上限のこと
