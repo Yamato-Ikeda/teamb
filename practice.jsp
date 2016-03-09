@@ -107,7 +107,7 @@
 			<c:out value="${cb.user_name}"/><br>
 			<pre><c:out value="${cb.message}"/></pre><br>
 			<c:if test="${!empty cb.image && cb.image != 'null'}" >
-				<img src="images/${cb.image}" alt="‰æ‘œ" title="“Še‚³‚ê‚½‰æ‘œ"><br><br>
+				<img src="images/small/${cb.image}" alt="‰æ‘œ" title="“Še‚³‚ê‚½‰æ‘œ"><br><br>
 			</c:if>
 		</c:if>
 	</c:forEach>

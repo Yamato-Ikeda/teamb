@@ -52,20 +52,26 @@ public class WriteServlet extends HttpServlet{
 			// 絶対パスからファイル名のみ取り出す
 			filename = new File(filename).getName();
 			
-			//boolean isJpegFile = false;
 			// JPEG形式のチェック
 			if ((contentType.equals("image/jpeg"))
 				|| (contentType.equals("image/pjpeg"))) {
-				// 画像ファイルをpath+filenameとして保存
+				// 画像ファイルを指定パスに保存
 					part.write("c:\\teamb\\images/" + filename);
-					//isJpegFile = true;
+					
+					image = filename;
+					
+					createThumbnail("c:\\teamb\\images/"+ filename,"c:\\teamb\\images\\small/" + filename, 120);
+					
+			}else if ((contentType.equals("image/png"))) {
+				// 画像ファイルを指定パスに保存
+					part.write("c:\\teamb\\images/" + filename);
 					
 					image = filename;
 					
 					createThumbnail("c:\\teamb\\images/"+ filename,"c:\\teamb\\images\\small/" + filename, 120);
 					
 			}else{
-				System.out.println("jpegではないので保存不可");
+				System.out.println("対応形式ではないので保存不可");
 			}
 			
 		}catch(NullPointerException e){
@@ -99,20 +105,13 @@ public class WriteServlet extends HttpServlet{
 		
 		We.execute(CB);
 		
+		//書き込んだスレッドを表示----------------------------------------------------
 		int postNo = -1;
 		ArrayList al = (ArrayList) RE.execute(postNo);
 		
 		req.setAttribute("al",al);
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/practice.jsp");
 		dispatcher.forward(req,res);
-		
-		//書き込んだスレッドを表示----------------------------------------------------
-		/*ReadExecuter RE=new ReadExecuter();
-		ThreadBean tb = (ThreadBean) RE.execute(threadNo);
-		
-		req.setAttribute("tb",tb);
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/contents.jsp");
-		dispatcher.forward(req,res);*/
 		//-----------------------------------------------------------------------------
 		
 	}
