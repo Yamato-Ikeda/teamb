@@ -6,6 +6,10 @@ import java.util.ArrayList;
 
 import java.io.IOException;
 import java.io.File;
+import java.awt.image.BufferedImage;
+import java.awt.RenderingHints;
+import java.awt.Graphics2D;
+import javax.imageio.ImageIO;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -18,7 +22,7 @@ public class WriteServlet extends HttpServlet{
 	WriteExecuter We=new WriteExecuter();
 	
 	public void doPost(HttpServletRequest req,HttpServletResponse res)
-	throws IOException,ServletException{		
+	throws IOException,ServletException{
 		req.setCharacterEncoding("Windows-31J");
 		System.out.println("“Še");
 		ContentBean CB=new ContentBean();
@@ -53,10 +57,13 @@ public class WriteServlet extends HttpServlet{
 			if ((contentType.equals("image/jpeg"))
 				|| (contentType.equals("image/pjpeg"))) {
 				// ‰æ‘œƒtƒ@ƒCƒ‹‚ğpath+filename‚Æ‚µ‚Ä•Û‘¶
-				part.write("c:\\teamb\\images/" + filename);
-				//isJpegFile = true;
-				
-				image = filename;
+					part.write("c:\\teamb\\images/" + filename);
+					//isJpegFile = true;
+					
+					image = filename;
+					
+					createThumbnail("c:\\teamb\\images/"+ filename,"c:\\teamb\\images\\small/" + filename, 120);
+					
 			}else{
 				System.out.println("jpeg‚Å‚Í‚È‚¢‚Ì‚Å•Û‘¶•s‰Â");
 			}
@@ -108,5 +115,31 @@ public class WriteServlet extends HttpServlet{
 		dispatcher.forward(req,res);*/
 		//-----------------------------------------------------------------------------
 		
+	}
+	private void createThumbnail(String originFile, String thumbFile, int width) {
+		try {
+			// Œ³‰æ‘œ‚Ì“Ç‚İ‚İ
+			BufferedImage image = ImageIO.read(new File(originFile));
+			// Œ³‰æ‘œ‚Ìî•ñ‚ğæ“¾
+			int originWidth = image.getWidth();
+			int originHeight = image.getHeight();
+			int type = image.getType();
+			// k¬‰æ‘œ‚Ì‚‚³‚ğŒvZ
+			int height = originHeight * width / originWidth;
+			
+			//k¬‰æ‘œ‚Ìì¬
+			BufferedImage smallImage = new BufferedImage(width, height, type);
+			Graphics2D g2 = smallImage.createGraphics();
+			
+			// •`‰æƒAƒ‹ƒSƒŠƒYƒ€‚Ìİ’è(•i¿—DæAƒAƒ“ƒ`ƒGƒCƒŠƒAƒXON)
+			g2.setRenderingHint(RenderingHints.KEY_RENDERING,  RenderingHints.VALUE_RENDER_DEFAULT);
+			g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING,  RenderingHints.VALUE_ANTIALIAS_ON);
+
+			// Œ³‰æ‘œ‚Ìk¬&•Û‘¶
+			g2.drawImage(image, 0, 0, width, height, null);
+			ImageIO.write(smallImage, "jpeg", new File(thumbFile));
+		} catch (Exception e) {
+			log("‰æ‘œ‚Ìk¬‚É¸”s: " + e);
+		}
 	}
 }
