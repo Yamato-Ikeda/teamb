@@ -97,14 +97,15 @@
 	</tbody>
 	
 </table>
-	
+	<a href ="index?thread=2">次のページへ</a>
 	<div align="right"><a href="delete">コメントの削除</a></div>
 	
 	<hr>
 	<c:forEach var="cb" items="${al}">
 		<c:if test="${!cb.delete_flag}" >
 			<c:out value="${cb.post_number}"/>
-			<c:out value="${cb.user_name}"/><br>
+			<c:out value="${cb.user_name}"/>
+			<c:out value="${cb.date}"/><br>
 			<pre><c:out value="${cb.message}"/></pre><br>
 			<c:if test="${!empty cb.image && cb.image != 'null'}" >
 				<img src="images/small/${cb.image}" alt="画像" title="投稿された画像"><br><br>
