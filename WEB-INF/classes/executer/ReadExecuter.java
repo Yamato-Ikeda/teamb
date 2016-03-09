@@ -10,15 +10,13 @@ public class ReadExecuter extends Executer{
 	
 	public Object execute(Object o){
 		
-		if(o != null){
-			Integer i = (Integer)o;
-		}
+		Integer i = (Integer)o;
 		
 		//DBに接続
 		accessor.connect();
 		
 		ArrayList<ContentBean> al = new ArrayList<ContentBean>();
-		
+		int count = 0;
 		//コメント一覧を取得----------------------------------------------------------------------
 		String sql = "SELECT * FROM Contents ORDER BY post_number DESC";
 		try{
@@ -45,9 +43,15 @@ public class ReadExecuter extends Executer{
 				System.out.println(rs.getString("Image"));
 				tb.setDate(rs.getString("Post_date"));
 				System.out.println(rs.getString("Post_date"));
-				
-				//コレクションに1スレッドごとのオブジェクトを格納
-				al.add(tb);
+				//削除されていないコメントなら、表示されるコメントの数を加算
+				if(!rs.getBoolean("Delete_flag")){
+					count++;
+				}
+				//コレクションに1コメントごとのオブジェクトを格納
+				//（指定された範囲の１０件のコメントのみ）
+				if(count <= i*10 && count >= i*10 - 9){
+					al.add(tb);
+				}
 			}
 		//----------------------------------------------------------------------------------------------------
 		

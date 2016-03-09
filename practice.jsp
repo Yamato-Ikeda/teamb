@@ -11,7 +11,14 @@
 <body>
 	<h1>掲示板練習</h1>
 	
-
+	<%
+	int pageNo = 1;
+	String SPageNo = request.getParameter("thread");
+	if(SPageNo != null){
+		pageNo = Integer.parseInt(SPageNo);
+	}
+	request.setAttribute("PNO",pageNo);
+	%>
 	
 <table border="0" cellpadding="0" cellspacing="0">
 	
@@ -97,14 +104,18 @@
 	</tbody>
 	
 </table>
-	
+	<c:if test="${PNO > 1}" >
+		<a href ="index?thread=<%=pageNo-1%>">前のページへ</a>
+	</c:if>
+	<a href ="index?thread=<%=pageNo+1%>">次のページへ</a>
 	<div align="right"><a href="delete">コメントの削除</a></div>
 	
 	<hr>
 	<c:forEach var="cb" items="${al}">
 		<c:if test="${!cb.delete_flag}" >
 			<c:out value="${cb.post_number}"/>
-			<c:out value="${cb.user_name}"/><br>
+			<c:out value="${cb.user_name}"/>
+			<c:out value="${cb.date}"/><br>
 			<pre><c:out value="${cb.message}"/></pre><br>
 			<c:if test="${!empty cb.image && cb.image != 'null'}" >
 				<img src="images/small/${cb.image}" alt="画像" title="投稿された画像"><br><br>
@@ -112,5 +123,9 @@
 		</c:if>
 	</c:forEach>
 	<hr>
+	<c:if test="${PNO > 1}" >
+		<a href ="index?thread=<%=pageNo-1%>">前のページへ</a>
+	</c:if>
+	<a href ="index?thread=<%=pageNo+1%>">次のページへ</a>
 </body>
 </html>

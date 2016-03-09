@@ -21,15 +21,23 @@ public class ReadServlet extends HttpServlet{
 	throws IOException,ServletException{		
 		req.setCharacterEncoding("Windows-31J");
 		
-
-		//int threadNo = Integer.parseInt( req.getParameter("thread") );
+		int postNo;
+		String StrPNo = req.getParameter("thread");
 		
-		//ContentsBean CB =new ContentsBean();
-		int postNo = -1;
+		if (StrPNo == null || StrPNo.length() == 0){
+			postNo = 1;
+		}else{
+			try{
+				postNo = Integer.parseInt(StrPNo);
+			}catch (NumberFormatException e){
+				postNo = 1;
+			}
+		}
+		
 		ArrayList al = (ArrayList) RE.execute(postNo);
 		
 		//CheckReplace cr = new CheckReplace();
-		//tb = cr.check(tb);
+		//cb = cr.check(cb);
 		
 		ContentBean tester = (ContentBean)al.get(1);
 		System.out.println(tester.getUser_name());
