@@ -11,7 +11,9 @@
 <body>
 	<h1>掲示板練習</h1>
 	
-
+	<%! int pageNo=1;
+	
+	 %>
 	
 <table border="0" cellpadding="0" cellspacing="0">
 	
@@ -97,7 +99,7 @@
 	</tbody>
 	
 </table>
-	<a href ="index?thread=2">次のページへ</a>
+	<a href ="index?thread=<%=pageNo%>" onclick="<%pageNo++;%>">次のページへ</a>
 	<div align="right"><a href="delete">コメントの削除</a></div>
 	
 	<hr>
