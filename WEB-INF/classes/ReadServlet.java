@@ -38,9 +38,12 @@ public class ReadServlet extends HttpServlet{
 		
 		//CheckReplace cr = new CheckReplace();
 		//cb = cr.check(cb);
+		try{
 		
 		ContentBean tester = (ContentBean)al.get(1);
 		System.out.println(tester.getUser_name());
+
+		}catch(IndexOutOfBoundsException e){};
 		
 		req.setAttribute("al",al);
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/practice.jsp");
