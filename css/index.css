@@ -1,5 +1,7 @@
 body {
 	text-align: -webkit-center;
+	background-color: black;
+	color: white;
 }
 
 h1 {
@@ -13,11 +15,11 @@ button {
 .t {
 	table-layout: fixed;
 }
-
-body {
-	background-color: black;
-	color: white;
+.t td{
+	text-align: center;
 }
+
+
 a{/*ƒŠƒ“ƒN‚³‚ê‚½•¶Žš*/
     color:#FFFF00;
     font-style:normal;

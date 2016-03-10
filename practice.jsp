@@ -116,19 +116,6 @@
 	<div align="right"><a href="delete">ƒRƒƒ“ƒg‚Ìíœ</a></div>
 	
 	<hr>
-<<<<<<< HEAD
-	<table class="t" width="50%" border="1">
-		<c:forEach var="cb" items="${al}">
-		<tr>
-			<c:if test="${!cb.delete_flag}" >
-			
-				<td><c:out value="${cb.post_number}"/></td>
-				<td><c:out value="${cb.user_name}"/></td>
-				<td><c:out value="${cb.date}"/></td></tr><tr>
-				<td width="200"><pre><c:out value="${cb.message}"/></pre></td></tr><tr>
-				<c:if test="${!empty cb.image && cb.image != 'null'}" >
-				<td><a href="images/${cb.image}" target="_blank"><img src="images/small/${cb.image}" alt="‰æ‘œ" title="“Še‚³‚ê‚½‰æ‘œ"></a></td>
-=======
 	
 	<c:forEach var="cb" items="${al}">
 		<table class="t" width="50%" border="0">
@@ -142,7 +129,6 @@
 						<c:if test="${!empty cb.image && cb.image != 'null'}" >
 							<td colspan="3"><a href="images/${cb.image}" target="_blank"><img src="images/small/${cb.image}" alt="‰æ‘œ" title="“Še‚³‚ê‚½‰æ‘œ"></a></td>
 						</c:if>
->>>>>>> refs/remotes/Yamato-Ikeda/master
 				</c:if>
 			</tr>
 		
