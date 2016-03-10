@@ -1,5 +1,7 @@
 body {
 	text-align: -webkit-center;
+	background-color: black;
+	color: white;
 }
 
 h1 {
@@ -14,7 +16,25 @@ button {
 	table-layout: fixed;
 }
 
-body {
-	background-color: black;
-	color: white;
+.t td{
+text-align: center;
 }
+
+pre {
+    /* Mozilla */
+    white-space: -moz-pre-wrap;
+ 
+    /* Opera 4-6 */
+    white-space: -pre-wrap;
+
+    /* Opera 7 */
+    white-space: -o-pre-wrap;
+ 
+    /* CSS3 */\
+    white-space: pre-wrap;
+ 
+    /* IE 5.5+ */
+    word-wrap: break-word;
+}
+
+
