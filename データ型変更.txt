@@ -5,3 +5,5 @@ ALTER TABLE contents MODIFY ( delete_key VARCHAR2(50) ) ;
 
 UpdatE contents
 SET delete_key = ' ';
+
+commit;

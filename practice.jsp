@@ -125,7 +125,7 @@
 					<td><c:out value="${cb.post_number}"/></td>
 					<td><c:out value="${cb.user_name}"/></td>
 					<td><c:out value="${cb.date}"/></td></tr><tr>
-					<td colspan="3" width="600"><c:out value="${cb.message}"/></td></tr><tr>
+					<td colspan="3" width="600"><pre><c:out value="${cb.message}"/></pre></td></tr><tr>
 						<c:if test="${!empty cb.image && cb.image != 'null'}" >
 							<td colspan="3"><a href="images/${cb.image}" target="_blank"><img src="images/small/${cb.image}" alt="‰æ‘œ" title="“Še‚³‚ê‚½‰æ‘œ"></a></td>
 						</c:if>
