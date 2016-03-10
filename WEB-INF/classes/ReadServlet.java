@@ -23,7 +23,7 @@ public class ReadServlet extends HttpServlet{
 		
 		int postNo;
 		String StrPNo = req.getParameter("thread");
-		
+		//postNoには、threadパラメータが空なら1を入れる
 		if (StrPNo == null || StrPNo.length() == 0){
 			postNo = 1;
 		}else{
@@ -40,8 +40,8 @@ public class ReadServlet extends HttpServlet{
 		//cb = cr.check(cb);
 		try{
 		
-		ContentBean tester = (ContentBean)al.get(1);
-		System.out.println(tester.getUser_name());
+		ContentBean tester = (ContentBean)al.get(1);//テスト用のログ出力
+		System.out.println(tester.getUser_name());//テスト用のログ出力
 
 		}catch(IndexOutOfBoundsException e){};
 		
