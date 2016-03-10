@@ -1,0 +1,60 @@
+@charset "utf-8";
+
+/* formatting style
+------------------------------*/
+* {
+	font-style: normal;
+	text-align:center;
+	margin: 1px;
+	padding: 1px;
+}
+body {
+	color: #;
+	background-color: black;
+	font-size: 50px;
+	line-height: 1.6;
+	font-family: sans-serif;
+	background-image: url(images/img.JPG);
+	background-size: auto 175%;
+	background-repeat: no-repeat;
+	background-position: top center;
+}
+hr {
+	display: none;
+}
+
+#month{
+	font-size:20px;
+}
+
+#day{
+	font-size:20px;
+}
+
+#send{
+	font-size:20px;
+}
+
+span#red{
+	color:#AFE0C0;
+	text-shadow: #AF5040 0.1em 0.1em 0.1em;
+}
+span#blue{
+	color:blue;
+}
+
+input#send{
+
+}
+input#send:hover{
+	color: red;
+	background-color: blue;
+}
+select#month{
+	color: orange;
+	background-color: white;
+}
+select#day{
+	color: orange;
+	background-color: white;
+}
