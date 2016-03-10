@@ -17,8 +17,13 @@
 	if(SPageNo != null){
 		pageNo = Integer.parseInt(SPageNo);
 	}
-	request.setAttribute("PNO",pageNo);
+	request.setAttribute("APageNo",pageNo);
 	%>
+	<!-- 「次のページへ」「前のページへ」のリンクの制御に使う。
+	int変数のpageNoは、aタグ内のthreadパラメータの値の指定に使う。
+		threadのパラメータが送信されていないなら、1にする。
+	アトリビュートのAPageNoは、c:ifの条件（「前のページへ」を表示するか）で使用する。	
+	-->
 	
 <table border="0" cellpadding="0" cellspacing="0">
 	
@@ -104,7 +109,7 @@
 	</tbody>
 	
 </table>
-	<c:if test="${PNO > 1}" >
+	<c:if test="${APageNo > 1}" >
 		<a href ="index?thread=<%=pageNo-1%>">前のページへ</a>
 	</c:if>
 	<a href ="index?thread=<%=pageNo+1%>">次のページへ</a>
@@ -123,7 +128,7 @@
 		</c:if>
 	</c:forEach>
 	<hr>
-	<c:if test="${PNO > 1}" >
+	<c:if test="${APageNo > 1}" >
 		<a href ="index?thread=<%=pageNo-1%>">前のページへ</a>
 	</c:if>
 	<a href ="index?thread=<%=pageNo+1%>">次のページへ</a>

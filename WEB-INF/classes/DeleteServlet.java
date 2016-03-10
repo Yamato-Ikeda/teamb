@@ -1,6 +1,7 @@
 import executer.*;
 
 import bean.*;
+import check.*;
 
 import java.util.ArrayList;
 
@@ -27,34 +28,26 @@ public class DeleteServlet extends HttpServlet{
 		}
 		
 		DeleteBean db = new DeleteBean();
-		
+		//DeleteBeanに各入力項目を代入
 		try{
-		
-		db.setPost_number(Integer.parseInt(p));
-				}catch(NumberFormatException e){db.setPost_number(0);}
+			db.setPost_number(Integer.parseInt(p));
+		}catch(NumberFormatException e){
+			db.setPost_number(0);
+		}
 		db.setDelete_key(d);
-
-		//int threadNo = Integer.parseInt( req.getParameter("thread") );
-		
-		//ContentsBean CB =new ContentsBean();
-		//int postNo = -1;
-		
+		//削除パスの ' を '' に変換する
+		CheckReplace cr = new CheckReplace();
+		db = cr.check(db);
+		//DeleteExecuterのexecuteを呼び出し、コメントの削除を試みる。結果はBooleanで返される
 		Boolean b = (Boolean) DE.execute(db);
 		
-		//CheckReplace cr = new CheckReplace();
-		//tb = cr.check(tb);
 		String result;
-		
 		if(b){
 			result="成功しました。";
-			
 		}else{
 			result="失敗しました。";
 		}
-			System.out.println(result);
-		
-		//ContentBean tester = (ContentBean)al.get(1);
-		//System.out.println(tester.getUser_name());
+		System.out.println(result);//テスト用メッセージ
 		
 		req.setAttribute("result",result);
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/delete.jsp");

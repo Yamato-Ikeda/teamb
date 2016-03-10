@@ -27,7 +27,7 @@ public class WriteServlet extends HttpServlet{
 		System.out.println("投稿");
 		ContentBean CB=new ContentBean();
 		
-
+		// ContentBeanに格納する情報の準備
 		String user_name = req.getParameter("user_name");
 		String email_address = req.getParameter("email_address");
 		String message = req.getParameter("message");
@@ -52,23 +52,22 @@ public class WriteServlet extends HttpServlet{
 			// 絶対パスからファイル名のみ取り出す
 			filename = new File(filename).getName();
 			
-			// JPEG形式のチェック
 			if ((contentType.equals("image/jpeg"))
-				|| (contentType.equals("image/pjpeg"))) {
+				|| (contentType.equals("image/pjpeg"))) {// JPEG形式のチェック
 				// 画像ファイルを指定パスに保存
-					part.write("c:\\teamb\\images/" + filename);
+				part.write("c:\\teamb\\images/" + filename);
+				// データベースに入れる「画像ファイルの名前」を設定
+				image = filename;
+				// 117行目からのメソッドでサムネイルを作成
+				createThumbnail("c:\\teamb\\images/"+ filename,"c:\\teamb\\images\\small/" + filename, 120);
 					
-					image = filename;
-					
-					createThumbnail("c:\\teamb\\images/"+ filename,"c:\\teamb\\images\\small/" + filename, 120);
-					
-			}else if ((contentType.equals("image/png"))) {
+			}else if ((contentType.equals("image/png"))) {// PNG形式のチェック
 				// 画像ファイルを指定パスに保存
-					part.write("c:\\teamb\\images/" + filename);
-					
-					image = filename;
-					
-					createThumbnail("c:\\teamb\\images/"+ filename,"c:\\teamb\\images\\small/" + filename, 120);
+				part.write("c:\\teamb\\images/" + filename);
+				// データベースに入れる「画像ファイルの名前」を設定
+				image = filename;
+				// 117行目からのメソッドでサムネイルを作成
+				createThumbnail("c:\\teamb\\images/"+ filename,"c:\\teamb\\images\\small/" + filename, 120);
 					
 			}else{
 				System.out.println("対応形式ではないので保存不可");
@@ -84,7 +83,7 @@ public class WriteServlet extends HttpServlet{
 		if(delete_key.length()==0){
 			delete_key=" ";
 		}
-		System.out.println(user_name+"さんの投稿");
+		System.out.println(user_name+"さんの投稿");//テスト用メッセージ
 		//バイト数を超えていないかのチェック-----------
 		/*boolean isError = CheckBytes.check(name,text);
 		if(isError){
@@ -93,16 +92,16 @@ public class WriteServlet extends HttpServlet{
 		}
 		//-------------------------------------------
 		*/
-		
+		// ContentBeanにコメントの情報を格納
 		CB.setUser_name(user_name);
 		CB.setEmail_address(email_address);
 		CB.setMessage(message);
 		CB.setDelete_key(delete_key);
 		CB.setImage(image);
-		
+		// CheckReplaceのcheckメソッドで、各要素から'を消す
 		CheckReplace cr = new CheckReplace();
 		CB = cr.check(CB);
-		
+		// WriteExecuterのexecuteを呼び出し、掲示板に書き込む
 		We.execute(CB);
 		
 		//書き込んだスレッドを表示----------------------------------------------------
