@@ -4,7 +4,7 @@ import check.*;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-//Calendar cl = Calendar.getInstance();		cl.get(Calendar.MINUTE);	calendar.get(Calendar.SECOND);
+//Calendar cl = Calendar.getInstance();		cl.get(Calendar.MINUTE)	cl.get(Calendar.SECOND)
 import java.io.IOException;
 import java.io.File;
 import java.awt.image.BufferedImage;
@@ -52,23 +52,27 @@ public class WriteServlet extends HttpServlet{
 			filename = filename.replace("\"", "");
 			// 絶対パスからファイル名のみ取り出す
 			filename = new File(filename).getName();
+			Calendar cl = Calendar.getInstance();
+			
+			String minute=String.valueOf(cl.get(Calendar.MINUTE));
+			String second=String.valueOf(cl.get(Calendar.SECOND));
 			
 			if ((contentType.equals("image/jpeg"))
 				|| (contentType.equals("image/pjpeg"))) {// JPEG形式のチェック
 				// 画像ファイルを指定パスに保存
-				part.write("c:\\teamb\\images/" + filename);
+				part.write("c:\\teamb\\images/" + minute + second + filename);
 				// データベースに入れる「画像ファイルの名前」を設定
-				image = filename;
+				image =  minute + second + filename;
 				// 117行目からのメソッドでサムネイルを作成
-				createThumbnail("c:\\teamb\\images/"+ filename,"c:\\teamb\\images\\small/" + filename, 120);
+				createThumbnail("c:\\teamb\\images/"+  minute + second + filename,"c:\\teamb\\images\\small/" +  minute + second + filename, 120);
 					
 			}else if ((contentType.equals("image/png"))) {// PNG形式のチェック
 				// 画像ファイルを指定パスに保存
-				part.write("c:\\teamb\\images/" + filename);
+				part.write("c:\\teamb\\images/" +  minute + second + filename);
 				// データベースに入れる「画像ファイルの名前」を設定
-				image = filename;
+				image =  minute + second + filename;
 				// 117行目からのメソッドでサムネイルを作成
-				createThumbnail("c:\\teamb\\images/"+ filename,"c:\\teamb\\images\\small/" + filename, 120);
+				createThumbnail("c:\\teamb\\images/"+  minute + second + filename,"c:\\teamb\\images\\small/" +  minute + second + filename, 120);
 					
 			}else{
 				System.out.println("対応形式ではないので保存不可");
