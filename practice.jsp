@@ -116,17 +116,22 @@
 	<div align="right"><a href="delete">コメントの削除</a></div>
 	
 	<hr>
-	<c:forEach var="cb" items="${al}">
-		<c:if test="${!cb.delete_flag}" >
-			<c:out value="${cb.post_number}"/>
-			<c:out value="${cb.user_name}"/>
-			<c:out value="${cb.date}"/><br>
-			<pre><c:out value="${cb.message}"/></pre><br>
-			<c:if test="${!empty cb.image && cb.image != 'null'}" >
-			<a href="images/${cb.image}" target="_blank"><img src="images/small/${cb.image}" alt="画像" title="投稿された画像"></a><br><br>
+	<table class="t" width="50%" border="1">
+		<c:forEach var="cb" items="${al}">
+		<tr>
+			<c:if test="${!cb.delete_flag}" >
+			
+				<td><c:out value="${cb.post_number}"/></td>
+				<td><c:out value="${cb.user_name}"/></td>
+				<td><c:out value="${cb.date}"/></td></tr><tr>
+				<td width="200"><pre><c:out value="${cb.message}"/></pre></td></tr><tr>
+				<c:if test="${!empty cb.image && cb.image != 'null'}" >
+				<td><a href="images/${cb.image}" target="_blank"><img src="images/small/${cb.image}" alt="画像" title="投稿された画像"></a></td>
+				</c:if>
 			</c:if>
-		</c:if>
-	</c:forEach>
+		</tr>
+		</c:forEach>
+	</table>
 	<hr>
 	<c:if test="${APageNo > 1}" >
 		<a href ="index?thread=<%=pageNo-1%>">前のページへ</a>
