@@ -1,0 +1,21 @@
+池田：jspのフォームとc:forEachの基礎部分、
+　　　ReadExecuter、DeleteExecuter、ReadSrevlet
+小沢：DeleteServlet、WriteServlet(画像保存処理)
+辻橋：Check、ContentBean、WriteExecuter、jspのテーブル
+大塚：DeleteBean、css、ReadSrevlet、jspのサブページ
+窪田：WriteServlet(基本部分)
+
+発表の流れ
+画像投稿機能を持つ掲示板です。
+投稿された画像をサムネイル表示し、クリックすると
+原寸大の画像を表示します。（投稿を実演）
+トップページは最新１０件を表示します。
+次のページへをクリックすると、次の１０件を表示します。
+コメントは、コメントの削除のページで、
+削除したい投稿番号と削除用パスを入力することで削除できます。
+投稿時に削除用パスが入力されていない場合は、この画面でも
+何も入力しないでボタンを押すと削除できます。
+（削除の成功と失敗を実演）
+
+苦労した点：Githubとjstlの知識が無かったこと
+　　　　　　画像を保存する方法を探したこと
