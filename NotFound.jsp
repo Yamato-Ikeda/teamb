@@ -6,6 +6,6 @@
 <body>
 </h1>
 	<p>‰æ‘œ‚ðŠJ‚¯‚Ü‚¹‚ñ‚Å‚µ‚½</p>
-	<a href="index">ŒfŽ¦”Â‚É–ß‚é</a>
+	<a href="javascript:;" onclick="window.close();">ŒfŽ¦”Â‚É–ß‚é</a>
 </body>
 </html>
