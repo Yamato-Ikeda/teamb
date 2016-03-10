@@ -118,7 +118,7 @@ public class WriteServlet extends HttpServlet{
 		ArrayList al = (ArrayList) RE.execute(postNo);
 		
 		req.setAttribute("al",al);
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/practice.jsp");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/index.jsp");
 		dispatcher.forward(req,res);
 		//-----------------------------------------------------------------------------
 		

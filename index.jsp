@@ -6,10 +6,20 @@
 <html>
 <head>
 <link rel="stylesheet" href="css/index.css">
-<title>掲示板練習</title>
+<title>掲示板</title>
 </head>
 <body>
-	<h1>掲示板練習</h1>
+	<h1>掲示板</h1>
+	
+	<p>以下の内容を含む投稿を禁止します。<br>
+	・日本及び各国の法律・法令・条例に違反するような内容<br>
+	・誹謗中傷や他人への不快感・精神的影響を与える内容<br>
+	・論理的観点から問題のある内容<br>
+	<br><br>
+	名前と削除用パスワードは25字まで、<br>
+	メッセージは500字まで入力できます。<br>
+	投稿可能な画像ファイルはjpgとpngです。
+	</p>
 	
 	<%
 	int pageNo = 1;
@@ -45,7 +55,7 @@
 							</td>
 							<td align="left" nowrap="">
 								Email 
-								<input name="email_address" size="22" value="" style="ime-mode:disabled" maxlength="50">
+								<input name="email_address" size="22" value="" style="ime-mode:disabled" maxlength="100" pattern="^[0-9A-Za-z@._-]+$">
 							</td>
 						</tr>
 						<tr>
@@ -81,7 +91,7 @@
 					<tbody>
 						<tr>
 							<td valign="middle">
-								<font color="red">※</font>メッセージ(タグ使用不可)
+								<font color="red">※</font>メッセージ（入力必須）
 								<br>
 								<textarea required name="message" cols="60" rows="6" maxlength="500"></textarea>
 							</td>
