@@ -1,7 +1,5 @@
 body {
 	text-align: -webkit-center;
-	background-color: black;
-	color: white;
 }
 
 h1 {
@@ -16,25 +14,29 @@ button {
 	table-layout: fixed;
 }
 
-.t td{
-text-align: center;
+body {
+	background-color: black;
+	color: white;
 }
-
-pre {
-    /* Mozilla */
-    white-space: -moz-pre-wrap;
- 
-    /* Opera 4-6 */
-    white-space: -pre-wrap;
-
-    /* Opera 7 */
-    white-space: -o-pre-wrap;
- 
-    /* CSS3 */\
-    white-space: pre-wrap;
- 
-    /* IE 5.5+ */
-    word-wrap: break-word;
+a{/*リンクされた文字*/
+    color:#FFFF00;
+    font-style:normal;
+    text-decoration:underline;
 }
-
-
+a:link {/*未訪問のリンク*/
+    color:#FFFF00;
+    font-style:normal;
+    text-decoration:underline;
+}
+a:visited {/*訪問後のリンク*/
+    color:#FFFF00;
+    text-decoration:underline;
+}
+a:hover {/*マウスをのせたとき*/
+    color:#FF0000;
+    font-style:normal;
+    text-decoration:underline;
+}
+a:active {/*クリック中*/
+    text-decoration:none;
+}

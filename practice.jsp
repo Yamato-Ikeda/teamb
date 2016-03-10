@@ -116,7 +116,7 @@
 	<div align="right"><a href="delete">ƒRƒƒ“ƒg‚Ìíœ</a></div>
 	
 	<hr>
-	<table class="t" width="50%" border="0">
+	<table class="t" width="50%" border="1">
 		<c:forEach var="cb" items="${al}">
 		<tr>
 			<c:if test="${!cb.delete_flag}" >
@@ -124,9 +124,9 @@
 				<td><c:out value="${cb.post_number}"/></td>
 				<td><c:out value="${cb.user_name}"/></td>
 				<td><c:out value="${cb.date}"/></td></tr><tr>
-				<td colspan="3" width="600"><c:out value="${cb.message}"/></td></tr><tr>
+				<td width="200"><pre><c:out value="${cb.message}"/></pre></td></tr><tr>
 				<c:if test="${!empty cb.image && cb.image != 'null'}" >
-				<td colspan="3"><a href="images/${cb.image}" target="_blank"><img src="images/small/${cb.image}" alt="‰æ‘œ" title="“Še‚³‚ê‚½‰æ‘œ"></a></td>
+				<td><a href="images/${cb.image}" target="_blank"><img src="images/small/${cb.image}" alt="‰æ‘œ" title="“Še‚³‚ê‚½‰æ‘œ"></a></td>
 				</c:if>
 			</c:if>
 		</tr>
