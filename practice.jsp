@@ -41,17 +41,17 @@
 						<tr>
 							<td align="right" nowrap="">
 								名前
-								<input name="user_name" size="18" value=""> 
+								<input name="user_name" size="18" value="" maxlength="25"> 
 							</td>
 							<td align="left" nowrap="">
 								Email 
-								<input name="email_address" size="22" value="" style="ime-mode:disabled">
+								<input name="email_address" size="22" value="" style="ime-mode:disabled" maxlength="50">
 							</td>
 						</tr>
 						<tr>
 							<td align="right" nowrap="">
 								削除用パスワード
-								<input name="delete_key" value="" style="ime-mode:disabled">
+								<input name="delete_key" value="" style="ime-mode:disabled" maxlength="5">
 							</td>
 							<td align="left" nowrap="">
 								<p>
@@ -83,7 +83,7 @@
 							<td valign="middle">
 								<font color="red">※</font>メッセージ(タグ使用不可)
 								<br>
-								<textarea required name="message" cols="60" rows="6"></textarea>
+								<textarea required name="message" cols="60" rows="6" maxlength="500"></textarea>
 							</td>
 						</tr>
 					</tbody>
