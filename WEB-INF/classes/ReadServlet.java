@@ -46,7 +46,7 @@ public class ReadServlet extends HttpServlet{
 		}catch(IndexOutOfBoundsException e){};
 		
 		req.setAttribute("al",al);
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/practice.jsp");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/index.jsp");
 		dispatcher.forward(req,res);
 		
 	}

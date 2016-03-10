@@ -43,9 +43,9 @@ public class DeleteServlet extends HttpServlet{
 		
 		String result;
 		if(b){
-			result="成功しました。";
+			result="コメントの削除に成功しました。";
 		}else{
-			result="失敗しました。";
+			result="コメントの削除に失敗しました。";
 		}
 		System.out.println(result);//テスト用メッセージ
 		
