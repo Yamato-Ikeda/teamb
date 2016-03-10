@@ -116,6 +116,7 @@
 	<div align="right"><a href="delete">コメントの削除</a></div>
 	
 	<hr>
+<<<<<<< HEAD
 	<table class="t" width="50%" border="1">
 		<c:forEach var="cb" items="${al}">
 		<tr>
@@ -127,11 +128,28 @@
 				<td width="200"><pre><c:out value="${cb.message}"/></pre></td></tr><tr>
 				<c:if test="${!empty cb.image && cb.image != 'null'}" >
 				<td><a href="images/${cb.image}" target="_blank"><img src="images/small/${cb.image}" alt="画像" title="投稿された画像"></a></td>
+=======
+	
+	<c:forEach var="cb" items="${al}">
+		<table class="t" width="50%" border="0">
+			<tr>
+				<c:if test="${!cb.delete_flag}" >
+				
+					<td><c:out value="${cb.post_number}"/></td>
+					<td><c:out value="${cb.user_name}"/></td>
+					<td><c:out value="${cb.date}"/></td></tr><tr>
+					<td colspan="3" width="600"><c:out value="${cb.message}"/></td></tr><tr>
+						<c:if test="${!empty cb.image && cb.image != 'null'}" >
+							<td colspan="3"><a href="images/${cb.image}" target="_blank"><img src="images/small/${cb.image}" alt="画像" title="投稿された画像"></a></td>
+						</c:if>
+>>>>>>> refs/remotes/Yamato-Ikeda/master
 				</c:if>
-			</c:if>
-		</tr>
-		</c:forEach>
-	</table>
+			</tr>
+		
+		</table>
+			<br><br>
+	</c:forEach>
+	
 	<hr>
 	<c:if test="${APageNo > 1}" >
 		<a href ="index?thread=<%=pageNo-1%>">前のページへ</a>
