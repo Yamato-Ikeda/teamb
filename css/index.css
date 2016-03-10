@@ -18,3 +18,25 @@ body {
 	background-color: black;
 	color: white;
 }
+a{/*リンクされた文字*/
+    color:0000ff;
+    font-style:normal;
+    text-decoration:underline;
+}
+a:link {/*未訪問のリンク*/
+    color:0000ff;
+    font-style:normal;
+    text-decoration:underline;
+}
+a:visited {/*訪問後のリンク*/
+    color:#934C7B;
+    text-decoration:underline;
+}
+a:hover {/*マウスをのせたとき*/
+    color:#ff0000;
+    font-style:normal;
+    text-decoration:underline;
+}
+a:active {/*クリック中*/
+    text-decoration:none;
+}
