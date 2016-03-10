@@ -54,25 +54,29 @@ public class WriteServlet extends HttpServlet{
 			filename = new File(filename).getName();
 			Calendar cl = Calendar.getInstance();
 			
+			String year=String.valueOf(cl.get(Calendar.YEAR));
+			String month=String.valueOf(cl.get(Calendar.MONTH));
+			String date=String.valueOf(cl.get(Calendar.DATE));
+			String hour=String.valueOf(cl.get(Calendar.HOUR));
 			String minute=String.valueOf(cl.get(Calendar.MINUTE));
 			String second=String.valueOf(cl.get(Calendar.SECOND));
 			
 			if ((contentType.equals("image/jpeg"))
 				|| (contentType.equals("image/pjpeg"))) {// JPEG形式のチェック
 				// 画像ファイルを指定パスに保存
-				part.write("c:\\teamb\\images/" + minute + second + filename);
+				part.write("c:\\teamb\\images/" + year + month + date + hour + minute + second + filename);
 				// データベースに入れる「画像ファイルの名前」を設定
-				image =  minute + second + filename;
+				image = year + month + date + hour + minute + second + filename;
 				// 117行目からのメソッドでサムネイルを作成
-				createThumbnail("c:\\teamb\\images/"+  minute + second + filename,"c:\\teamb\\images\\small/" +  minute + second + filename, 120);
+				createThumbnail("c:\\teamb\\images/"+ year + month + date + hour + minute + second + filename,"c:\\teamb\\images\\small/" + year + month + date + hour + minute + second + filename , 120);
 					
 			}else if ((contentType.equals("image/png"))) {// PNG形式のチェック
 				// 画像ファイルを指定パスに保存
-				part.write("c:\\teamb\\images/" +  minute + second + filename);
+				part.write("c:\\teamb\\images/" + year + month + date + hour + minute + second + filename);
 				// データベースに入れる「画像ファイルの名前」を設定
-				image =  minute + second + filename;
+				image =  year + month + date + hour + minute + second + filename;
 				// 117行目からのメソッドでサムネイルを作成
-				createThumbnail("c:\\teamb\\images/"+  minute + second + filename,"c:\\teamb\\images\\small/" +  minute + second + filename, 120);
+				createThumbnail("c:\\teamb\\images/"+ year + month + date + hour + minute + second + filename,"c:\\teamb\\images\\small/" + year + month + date + hour + minute + second + filename , 120);
 					
 			}else{
 				System.out.println("対応形式ではないので保存不可");
