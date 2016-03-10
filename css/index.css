@@ -1,5 +1,7 @@
 body {
 	text-align: -webkit-center;
+	background-color: black;
+	color: white;
 }
 
 h1 {
@@ -13,11 +15,11 @@ button {
 .t {
 	table-layout: fixed;
 }
-
-body {
-	background-color: black;
-	color: white;
+.t td{
+	text-align: center;
 }
+
+
 a{/*リンクされた文字*/
     color:#FFFF00;
     font-style:normal;
@@ -39,4 +41,22 @@ a:hover {/*マウスをのせたとき*/
 }
 a:active {/*クリック中*/
     text-decoration:none;
+}
+
+
+pre {
+    /* Mozilla */
+    white-space: -moz-pre-wrap;
+   
+    /* Opera 4-6 */
+    white-space: -pre-wrap;
+    
+    /* Opera 7 */
+    white-space: -o-pre-wrap;
+ 
+    /* CSS3 */
+    white-space: pre-wrap;
+ 
+    /* IE 5.5+ */
+    word-wrap: break-word;
 }
