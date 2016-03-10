@@ -19,21 +19,21 @@ body {
 	color: white;
 }
 a{/*リンクされた文字*/
-    color:0000ff;
+    color:#FFFF00;
     font-style:normal;
     text-decoration:underline;
 }
 a:link {/*未訪問のリンク*/
-    color:0000ff;
+    color:#FFFF00;
     font-style:normal;
     text-decoration:underline;
 }
 a:visited {/*訪問後のリンク*/
-    color:#934C7B;
+    color:#FFFF00;
     text-decoration:underline;
 }
 a:hover {/*マウスをのせたとき*/
-    color:#ff0000;
+    color:#FF0000;
     font-style:normal;
     text-decoration:underline;
 }
