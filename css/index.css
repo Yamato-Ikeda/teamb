@@ -9,3 +9,7 @@ h1 {
 
 button{
 }
+
+.t{
+	table-layout: fixed;
+}
