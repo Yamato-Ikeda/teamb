@@ -17,9 +17,9 @@ public class DeleteExecuter extends Executer{
 		String postedDKey = db.getDelete_key();
 		
 		System.out.println(postedDKey);//test
-		
+		//postedDKeyにはフォームで入力された削除パスの文字が入る
 		String DBDKey = "";
-		
+		//DBDKeyにはデータベースに保存されている削除パス（指定されたコメント番号のもの）が入る
 		//DBに接続
 		accessor.connect();
 		//コメントを取得----------------------------------------------------------------------
@@ -40,7 +40,7 @@ public class DeleteExecuter extends Executer{
 		}
 		
 		if(postedDKey.equals(DBDKey)){
-			//
+			//postedDKeyとDBDKeyの内容が合致したなら削除フラグを立てる（表示しない処理はReadExecuterで行われる）
 			System.out.println("合致、削除処理実行");//test
 			sql = "UPDATE Contents SET delete_flag = 1 WHERE post_number = ";
 			sql = sql.concat(post_number.toString());

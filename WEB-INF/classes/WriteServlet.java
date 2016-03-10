@@ -3,7 +3,8 @@ import bean.*;
 import check.*;
 
 import java.util.ArrayList;
-
+import java.util.Calendar;
+//Calendar cl = Calendar.getInstance();		cl.get(Calendar.MINUTE);	calendar.get(Calendar.SECOND);
 import java.io.IOException;
 import java.io.File;
 import java.awt.image.BufferedImage;
