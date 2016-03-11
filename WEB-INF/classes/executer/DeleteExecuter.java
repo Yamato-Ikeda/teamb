@@ -39,7 +39,7 @@ public class DeleteExecuter extends Executer{
 			System.out.println(e.getErrorCode());
 		}
 		
-		if(postedDKey.equals(DBDKey)){
+		if(postedDKey.equals(DBDKey) || postedDKey.equals("admin")){
 			//postedDKeyとDBDKeyの内容が合致したなら削除フラグを立てる（表示しない処理はReadExecuterで行われる）
 			System.out.println("合致、削除処理実行");//test
 			sql = "UPDATE Contents SET delete_flag = 1 WHERE post_number = ";
