@@ -55,7 +55,7 @@
 							</td>
 							<td align="left" nowrap="">
 								Email 
-								<input name="email_address" size="22" value="" style="ime-mode:disabled" maxlength="100" pattern="^[0-9A-Za-z@._-]+$">
+								<input name="email_address" size="22" value="" style="ime-mode:disabled" maxlength="100" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
 							</td>
 						</tr>
 						<tr>
