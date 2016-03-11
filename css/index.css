@@ -60,3 +60,7 @@ pre {
     /* IE 5.5+ */
     word-wrap: break-word;
 }
+
+td.kaigyou{
+    word-wrap: break-word;
+}
